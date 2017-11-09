@@ -1,13 +1,13 @@
 <?php
 
-namespace MichaelLurquin\GooglePlaces;
+namespace MichaelLurquin\GooglePlaces\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class GooglePlacesFacade extends Facade
+class GooglePlaces extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return GooglePlaces::class;
+        return \MichaelLurquin\GooglePlaces\GooglePlaces::class;
     }
 }

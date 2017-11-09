@@ -18,6 +18,8 @@ class GooglePlacesServiceProvider extends ServiceProvider
         $this->app->singleton(GooglePlaces::class, function($app) {
             return new GooglePlaces($app['config']);
         });
+
+        $this->app->alias(GooglePlaces::class, 'googleplaces');
     }
 
     /**

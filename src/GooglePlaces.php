@@ -2,12 +2,24 @@
 
 namespace MichaelLurquin\GooglePlaces;
 
-use Illuminate\Config\Repository as Config;
+use Illuminate\Config\Repository;
 
 class GooglePlaces
 {
-    public function __construct(Config $config)
+    /**
+     * Config.
+     *
+     * @var \Illuminate\Config\Repository
+     */
+    protected $config;
+
+    public function __construct(Repository $config)
     {
-        dd($config);
+        $this->config = $config;
+    }
+
+    public function getTokenAPI()
+    {
+        return $this->config->get('google_places_api.TOKEN', NULL);
     }
 }

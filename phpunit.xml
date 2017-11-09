@@ -13,7 +13,4 @@
             <directory suffix=".php">./tests</directory>
         </testsuite>
     </testsuites>
-    <php>
-        <env name="TOKEN" value="AIzaSyB-1tGgNNhUdsvvxv7BKzN5vEsl-X49f1Y" />
-    </php>
 </phpunit>
