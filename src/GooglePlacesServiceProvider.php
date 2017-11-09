@@ -19,7 +19,7 @@ class GooglePlacesServiceProvider extends ServiceProvider
             return new GooglePlaces($app['config']);
         });
 
-        $this->app->alias(GooglePlaces::class, 'googleplaces');
+        $this->app->alias(GooglePlaces::class, 'GooglePlaces');
     }
 
     /**

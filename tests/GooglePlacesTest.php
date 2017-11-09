@@ -75,6 +75,6 @@ class GooglePlacesTest extends OrchestraTestCase
      */
     public function testTokenIfSetted()
     {
-        $this->assertNotNull(app('googleplaces')->getTokenAPI());
+        $this->assertNotNull(app('GooglePlaces')->getTokenAPI());
     }
 }
