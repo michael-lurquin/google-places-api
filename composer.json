@@ -1,0 +1,39 @@
+{
+    "name": "michael-lurquin/google-places-api",
+    "description": "Google Places Interface for Laravel",
+    "license": "MIT",
+    "keywords": ["google", "places", "api", "laravel", "php"],
+    "homepage": "https://github.com/michael-lurquin/google-places-api",
+    "authors": [
+        {
+            "name": "Michaël Lurquin",
+            "email": "michael.lurquin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "laravel/framework": ">=5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "^3.5"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "MichaelLurquin\\GooglePlaces\\": "src/",
+            "MichaelLurquin\\GooglePlaces\\Tests\\": "src/tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelLurquin\\GooglePlaces\\GooglePlacesServiceProvider"
+            ],
+            "aliases": {
+                "GooglePlaces": "MichaelLurquin\\GooglePlaces\\GooglePlacesFacade"
+            }
+        }
+    }
+}
