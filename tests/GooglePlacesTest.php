@@ -67,7 +67,7 @@ class GooglePlacesTest extends OrchestraTestCase
 
         $app['config']->set("{$key}.TOKEN", $this->getTokenTest());
 
-        var_dump($app['config']->get($key));
+//        var_dump($app['config']->get($key));
     }
 
     /**
@@ -75,6 +75,30 @@ class GooglePlacesTest extends OrchestraTestCase
      */
     public function testTokenIfSetted()
     {
-        $this->assertNotNull(app('GooglePlaces')->getTokenAPI());
+        $response = app('GooglePlaces')->getTokenAPI();
+
+        $this->assertNotNull($response);
+    }
+
+    public function testResultAPI()
+    {
+        $response = app('GooglePlaces')->searchLocation(51.105516, 2.650142)->setType('restaurant')->get();
+
+        $restaurants = array_column($response, 'place_id', 'name');
+
+        dd(array_keys($restaurants));
+
+        if ( !empty($restaurants) )
+        {
+            foreach($restaurants as $name => $placeId)
+            {
+                var_dump($name, $placeId);
+                echo PHP_EOL;
+                $details = app('GooglePlaces')->getDetailsShop($placeId);
+                dd($details);
+            }
+        }
+
+        $this->assertNotNull($response);
     }
 }
